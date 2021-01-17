@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="/playlists/add", method="POST">
+    {{form.hidden_tag()}}
+    {% for field in form if field.widget.input_type != 'hidden' %}
+    {{field.label}}
+    {{field}}
+    {% endfor %}
+    <button class="btn">Add</button>
+</form>
+
+
+{% endblock %}
